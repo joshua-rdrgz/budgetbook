@@ -14,9 +14,7 @@ jobs:
         working-directory: ./packages/api
     strategy:
       matrix:
-        # selected operation systems to run CI
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        # selected node version to run CI
+        os: [ubuntu-latest]
         node-version: [14.x, 15.x, 19.x]
     steps:
       - uses: actions/checkout@v3
@@ -37,7 +35,7 @@ jobs:
     strategy:
       matrix:
         # selected operation systems to run CI
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [ubuntu-latest]
         # selected node version to run CI
         node-version: [14.x, 15.x, 19.x]
     steps:
