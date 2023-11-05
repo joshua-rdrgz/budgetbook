@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [14.x, 15.x, 19.x]
+        node-version: [19.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -37,7 +37,7 @@ jobs:
         # selected operation systems to run CI
         os: [ubuntu-latest]
         # selected node version to run CI
-        node-version: [14.x, 15.x, 19.x]
+        node-version: [19.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
