@@ -31,12 +31,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     defaults:
       run:
-        working-directory: ./packages/api
+        working-directory: ./packages/client
     strategy:
       matrix:
-        # selected operation systems to run CI
         os: [ubuntu-latest]
-        # selected node version to run CI
         node-version: [19.x]
     steps:
       - uses: actions/checkout@v3
