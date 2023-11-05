@@ -1,0 +1,30 @@
+services:
+  api:
+    container_name: api
+    build:
+      context: ./
+      dockerfile: ./packages/api/Dockerfile.prod
+    init: true
+    networks:
+      - production
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+
+  client:
+    container_name: client
+    build:
+      context: ./
+      dockerfile: ./packages/client/Dockerfile.prod
+    init: true
+    volumes:
+      - type: bind
+        source: ./packages/client/nginx.conf
+        target: /etc/nginx/conf.d/default.conf
+    networks:
+      - production
+    ports:
+      - 80:8080
+
+networks:
+  production:
